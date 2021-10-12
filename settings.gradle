@@ -1,3 +1,5 @@
+include ':medical'
+include ':core_user'
 include ':sdktestmodule'
 include ':app'
 rootProject.name = "SdkTest"

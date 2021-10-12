@@ -2,22 +2,19 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.android.library'
 apply plugin: 'digital.wup.android-maven-publish'
 
-def LIB_GROUP_ID = 'test.chaimgross'
-def LIB_ARTIFACT_ID = 'sdktest'
-def LIB_VERSION = '0.0.1'
-
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier "sources"
 }
 
 publishing {
+
     repositories {
         maven {
             url = uri("https://maven.pkg.github.com/chaimgross/sdktest")
             credentials {
                 username = 'chaimgross'
-                password = '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'
+                password = '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'
             }
         }
 //        maven {
@@ -26,7 +23,9 @@ publishing {
 //        }
     }
     publications {
+
         mavenAar(MavenPublication) {
+
             groupId LIB_GROUP_ID
             artifactId LIB_ARTIFACT_ID
             version LIB_VERSION
